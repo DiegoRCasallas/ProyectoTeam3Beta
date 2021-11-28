@@ -6,22 +6,22 @@ import { GetComponent } from './get/get.component';
 
 const routes: Routes = [
   {
-    path: 'create',
-    component: CreateComponent,
-    },{
-    path: 'edit',
-    component: EditComponent,
-    },{
-    path: 'get',
-    component: GetComponent,
-    },{
-    path: '',
-    redirectTo: 'get'
-    }
+path: 'create',
+component: CreateComponent,
+},{
+path: 'edit',
+component: EditComponent,
+},{
+path: 'get',
+component: GetComponent,
+},{
+path: '',
+redirectTo: 'get'
+}
 ];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class AeropuertosRoutingModule { }
+export class RutasRoutingModule { }

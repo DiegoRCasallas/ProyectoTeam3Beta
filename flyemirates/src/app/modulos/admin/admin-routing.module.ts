@@ -8,13 +8,16 @@ const routes: Routes = [
   {
     path: 'create',
     component: CreateComponent,
-  },{
+    },{
     path: 'edit',
     component: EditComponent,
-  },{
+    },{
     path: 'get',
     component: GetComponent,
-  }
+    },{
+    path: '',
+    redirectTo: 'get'
+    }
 ];
 
 @NgModule({
