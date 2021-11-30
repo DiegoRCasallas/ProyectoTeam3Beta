@@ -9,12 +9,15 @@ import { UsuarioModelo } from
   providedIn: 'root'
 })
 export class SeguridadService {
-  url = "http://localhost:3000";
-  sessionUserData = new
-  BehaviorSubject<UsuarioModelo>(new UsuarioModelo());
+  
   constructor(private http: HttpClient) {
     this.verificarSesion();
    }
+  
+  url = "http://localhost:3000";
+  sessionUserData = new
+  BehaviorSubject<UsuarioModelo>(new UsuarioModelo());
+  
   login(correo: string, clave: string): Observable<any>
 {
 //Hacemos la solicitud al servicio web de login pasandole usuario y clave

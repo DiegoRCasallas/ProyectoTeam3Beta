@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import * as cryptoJS from 'crypto-js';
+
 import { SeguridadService } from
 'src/app/servicios/seguridad.service';
 import { Router } from '@angular/router';
@@ -11,14 +12,14 @@ import { Router } from '@angular/router';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  fgValidacion = this.fb.group({
+  
+  constructor(private fb: FormBuilder,
+    private seguridadService: SeguridadService,
+    private router: Router) { }
+fgValidacion = this.fb.group({
     correo: ['', [Validators.required, Validators.email]],
     clave: ['', [Validators.required]]
     });
-  constructor(private fb: FormBuilder,
-    private seguridadService: SeguridadService,
-private router: Router) { }
-
   ngOnInit(): void {
   }
   identificarUsuario() {
