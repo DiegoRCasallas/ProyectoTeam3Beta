@@ -6,16 +6,14 @@ import { IndexComponent } from './assets/index/index.component';
 const routes: Routes = [
   {
     path: 'seguridad',
-    loadChildren: () =>
-    import('./modulos/seguridad/seguridad.module').then(m=> m.SeguridadModule)
-    },{
+    loadChildren: () =>import('./modulos/seguridad/seguridad.module').then(m=> m.SeguridadModule)
+ },{
     path: 'admin',
-    loadChildren: () =>
-    import('./modulos/admin/admin.module').then(m =>m.AdminModule)
+    loadChildren: () =>import('./modulos/admin/admin.module').then(m =>m.AdminModule)
     },{
-    path: 'aeropuertos',
-    loadChildren: () =>
-    import('./modulos/aeropuertos/aeropuertos.module').then(m => m.AeropuertosModule)
+    
+	path: 'aeropuertos',
+    loadChildren: () =>import('./modulos/aeropuertos/aeropuertos.module').then(m => m.AeropuertosModule)
     },{
       path: 'rutas',
       loadChildren: () =>
