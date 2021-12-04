@@ -1,11 +1,13 @@
 <nav>
     <div class="nav-wrapper #f44336 red">
-     <a href="#" class="brand-logo">Team3</a>
+     <a href="#" class="brand-logo">
+	 Team3
+	 </a>
      <ul id="nav-mobile" class="right hide-on-med-and-down">
-      <li><a routerLink="/admin/get">Usuarios</a></li>
-      <li><a routerLink="/aeropuertos/get">Aeropuertos</a></li>
-      <li><a routerLink="/rutas/get">Rutas</a></li>
-      <li><a routerLink="/vuelos/get">Vuelos</a></li>
+      <li *ngIf="activeSession"><a routerLink="/admin/get">Usuarios</a></li>
+      <li *ngIf="activeSession"><a routerLink="/aeropuertos/get">Aeropuertos</a></li>
+      <li *ngIf="activeSession"><a routerLink="/rutas/get">Rutas</a></li>
+      <li *ngIf="activeSession"><a routerLink="/vuelos/get">Vuelos</a></li>
      
 	  
 	  

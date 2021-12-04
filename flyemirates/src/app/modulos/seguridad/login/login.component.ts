@@ -26,20 +26,6 @@ fgValidacion = this.fb.group({
   
   
   
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
   identificarUsuario() {
     let usuario =
     this.fgValidacion.controls["correo"].value;
@@ -73,6 +59,5 @@ fgValidacion = this.fb.group({
 
       }
     }
-    );
-    }
-}
+    
+    
