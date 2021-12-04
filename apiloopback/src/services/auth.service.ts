@@ -41,7 +41,7 @@ export class AuthService {
       data: {
         id: usuario.id,
         correo: usuario.correo,
-        nombre: usuario.nombre + " " + usuario.apellido
+        nombre: usuario.nombre + " " + usuario.apellidos
       }
     }, config.claveJWT)
  

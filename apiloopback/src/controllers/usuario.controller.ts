@@ -68,7 +68,7 @@ export class UsuarioController {
     // let destino = usuario.telefono;
 
     let asunto = 'Registro de usuario en plataforma';
-    let contenido = `Hola, ${usuario.nombre} ${usuario.apellido} su contraseña en el portal es: ${clave}`
+    let contenido = `Hola, ${usuario.nombre} ${usuario.apellidos} su contraseña en el portal es: ${clave}`
     axios({
       method: 'post',
       url: 'http://localhost:5000/send_email', //Si quiero enviar por mensaje cambiar a send_sms
@@ -212,7 +212,7 @@ export class UsuarioController {
         status: "success",
         data: {
           nombre: p.nombre,
-          apellidos: p.apellido,
+          apellidos: p.apellidos,
           correo: p.correo,
           id: p.id
         },
