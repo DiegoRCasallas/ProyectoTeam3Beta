@@ -16,7 +16,7 @@ export class UsuarioService {
 
   url = "http://localhost:3000"
   token: string = ''
-
+//metodo para crear usuario
   store(usuario: UsuarioModelo): Observable<UsuarioModelo> {
     return this.http.post<UsuarioModelo>(`${this.url}/usuarios`, {
       nombre: usuario.nombre,
@@ -25,7 +25,7 @@ export class UsuarioService {
       correo: usuario.correo
     });
   }
-
+//metodo para listar usuario
   getAll(): Observable<UsuarioModelo[]> {
     return this.http.get<UsuarioModelo[]>(`${this.url}/usuarios`, {
       headers: new HttpHeaders({
@@ -33,7 +33,7 @@ export class UsuarioService {
       })
     })
   }
-
+//metodo para actualizar usuario
   update(usuario: UsuarioModelo): Observable<UsuarioModelo> {
     return this.http.patch<UsuarioModelo>(`${this.url}/usuarios/${usuario.id}`, {
       nombre: usuario.nombre,
@@ -46,7 +46,7 @@ export class UsuarioService {
       })
     });
   }
-
+//metodo para eliminar usuario
   delete(id: string): Observable<UsuarioModelo[]> {
     return this.http.delete<UsuarioModelo[]>(`${this.url}/usuarios/${id}`, {
       headers: new HttpHeaders({
@@ -54,7 +54,7 @@ export class UsuarioService {
       })
     })
   }
-
+//Metodo para Consultar un unico Usuario
   getWithId(id: string): Observable<UsuarioModelo> {
     return this.http.get<UsuarioModelo>(`${this.url}/usuarios/${id}`, {
       headers: new HttpHeaders({

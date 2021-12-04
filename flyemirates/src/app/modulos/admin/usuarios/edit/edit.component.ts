@@ -31,7 +31,7 @@ export class EditComponent implements OnInit {
     this.id = this.route.snapshot.params["id"]
     this.buscarRegistro(this.id);
   }
-
+//método para traer la informacion del registro
   buscarRegistro(id: string){
     this.usuarioService.getWithId(id).subscribe((data: UsuarioModelo) => {
       console.log(data)
@@ -40,9 +40,10 @@ export class EditComponent implements OnInit {
       this.fgValidacion.controls["apellidos"].setValue(data.apellidos)
       this.fgValidacion.controls["correo"].setValue(data.correo)
       this.fgValidacion.controls["telefono"].setValue(data.telefono)
+      
     })
   }
-
+ //metodo para editar la informacion 
   edit(){
     let usuario = new UsuarioModelo();
     usuario.id = this.fgValidacion.controls["id"].value;

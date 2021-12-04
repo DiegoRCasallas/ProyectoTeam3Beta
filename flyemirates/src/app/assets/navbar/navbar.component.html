@@ -1,7 +1,7 @@
 <nav>
     <div class="nav-wrapper #f44336 red">
      <a href="#" class="brand-logo">
-	 Team3
+	 Team 3
 	 </a>
      <ul id="nav-mobile" class="right hide-on-med-and-down">
       <li *ngIf="activeSession"><a routerLink="/admin/get">Usuarios</a></li>
@@ -14,10 +14,8 @@
 	  
 	  <!-- Sesion -->
       <li *ngIf="!activeSession"><a routerLink="/seguridad/login">Login</a></li>
-      <li *ngIf="activeSession"><a routerLink=
-	  "/admin/create">Registrarse</a></li>
-      <li *ngIf="activeSession"><a routerLink=
-	  "/seguridad/logout">Cerrar Sesion</a></li>
+      <li *ngIf="activeSession"><a routerLink="/admin/create">Registrarse</a></li>
+      <li *ngIf="activeSession"><a routerLink="/seguridad/logout">Cerrar Sesion</a></li>
 	 </ul>
     </div>
 </nav>

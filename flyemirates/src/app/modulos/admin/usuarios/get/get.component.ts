@@ -17,7 +17,7 @@ export class GetComponent implements OnInit {
   ngOnInit(): void {
     this.getAll()
   }
-
+//métodos para traer información y eliminar información
   getAll(){
     this.usuarioService.getAll().subscribe((data: UsuarioModelo[]) => {
       this.listado = data
