@@ -14,7 +14,7 @@
 	  
 	  <!-- Sesion -->
       <li *ngIf="!activeSession"><a routerLink="/seguridad/login">Login</a></li>
-      <li *ngIf="activeSession"><a routerLink="/admin/create">Registrarse</a></li>
+      <li *ngIf="!activeSession"><a routerLink="/admin/create">Registrarse</a></li>
       <li *ngIf="activeSession"><a routerLink="/seguridad/logout">Cerrar Sesion</a></li>
 	 </ul>
     </div>
