@@ -19,6 +19,13 @@ export class EditComponent implements OnInit {
     private router: Router,
     private route: ActivatedRoute) { }
 
+    ngOnInit(): void { console.log (this.route.snapshot.params["id"])
+
+    this.id = this.route.snapshot.params["id"]
+    this.buscarRegistro(this.id);
+  }
+
+
 
     fgValidacion = this.fb.group({
       id: ['', [Validators.required]],
@@ -37,7 +44,7 @@ export class EditComponent implements OnInit {
     id: string=''
 
 
-    buscarRegistro(id: string){
+    buscarRegistro(id: string){ console.log (id)
       this.vueloService.getWithId(id).subscribe((data: VueloModelo) => {
         console.log(data)
         this.fgValidacion.controls["id"].setValue(id)
@@ -54,9 +61,9 @@ export class EditComponent implements OnInit {
     edit(){
       let vuelo = new VueloModelo();
       vuelo.id = this.fgValidacion.controls["id"].value;
-      vuelo.fecha_inicio = this.fgValidacion.controls["fecha_inicio"].value;
+      vuelo.fecha_inicio = new Date(this.fgValidacion.controls["fecha_inicio"].value).toISOString()
       vuelo.hora_inicio = this.fgValidacion.controls["hora_inicio"].value;
-      vuelo.fecha_fin = this.fgValidacion.controls["fecha_fin"].value;
+      vuelo.fecha_fin = vuelo.fecha_fin = new Date(this.fgValidacion.controls["fecha_fin"].value).toISOString()
       vuelo.hora_fin = this.fgValidacion.controls["hora_fin"].value;
       vuelo.asientos_vendidos = this.fgValidacion.controls["asientos_vendidos"].value;
       vuelo.nombre_piloto = this.fgValidacion.controls["nombre_piloto"].value;
@@ -67,7 +74,7 @@ export class EditComponent implements OnInit {
    
       this.vueloService.update(vuelo).subscribe((data: VueloModelo)=> {
         Swal.fire('Editado Correctamente!', '', 'success')
-        this.router.navigate(['/admin/get']);
+        this.router.navigate(['/vuelos/get']);
       },
       (error: any) => {
         console.log(error)
@@ -77,10 +84,6 @@ export class EditComponent implements OnInit {
   
   
 
-  ngOnInit(): void {
 
-    this.id = this.route.snapshot.params["id"]
-    this.buscarRegistro(this.id);
-  }
 
 }
