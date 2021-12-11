@@ -4,7 +4,7 @@ import { Router } from '@angular/router';
 import { RutaModelo } from 'src/app/modelos/ruta.model';
 import { RutaService } from 'src/app/servicios/ruta.service';
 import Swal from 'sweetalert2'
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
 
 @Component({
   selector: 'app-create',
