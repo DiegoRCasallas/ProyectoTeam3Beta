@@ -19,10 +19,10 @@ import {
 } from '@loopback/rest';
 import {Vuelo} from '../models';
 import {VueloRepository} from '../repositories';
-import {authenticate} from '@loopback/authentication';
+//import {authenticate} from '@loopback/authentication';
 
 
-@authenticate("admin")
+//@authenticate("admin")
 export class VueloController {
   constructor(
     @repository(VueloRepository)

@@ -19,9 +19,9 @@ import {
 } from '@loopback/rest';
 import {Ruta} from '../models';
 import {RutaRepository} from '../repositories';
-import {authenticate} from '@loopback/authentication';
+//import {authenticate} from '@loopback/authentication';
 
-@authenticate("admin")
+//@authenticate("admin")
 export class RutaController {
   constructor(
     @repository(RutaRepository)
