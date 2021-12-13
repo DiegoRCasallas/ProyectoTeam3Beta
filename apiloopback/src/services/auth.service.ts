@@ -1,14 +1,13 @@
 import { injectable, /* inject, */ BindingScope } from '@loopback/core';
-// Nuevas librerias
-const generator = require("password-generator");
-const cryptoJS = require("crypto-js");
-
 import {config} from '../config/config';
 import {Usuario} from '../models';
 const jwt = require('jsonwebtoken');
 import {UsuarioRepository} from '../repositories';
 import {repository} from '@loopback/repository';
 
+// Nuevas librerias
+const generator = require("password-generator");
+const cryptoJS = require("crypto-js");
 
 
 

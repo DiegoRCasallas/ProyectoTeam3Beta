@@ -26,8 +26,9 @@ import axios from 'axios';
 //librerias para importacion de credenciales y excepxiones
 import { Credenciales } from '../models';
 import { HttpErrors } from '@loopback/rest';
+//import {authenticate} from '@loopback/authentication';
 
-
+//@authenticate("admin")
 
 export class UsuarioController {
   constructor(
@@ -37,6 +38,7 @@ export class UsuarioController {
     public servicioAuth: AuthService
   ) { }
 
+  //@authenticate.skip()
   @post('/usuarios')
   @response(200, {
     description: 'Usuario model instance',
@@ -194,6 +196,7 @@ export class UsuarioController {
   }
 
   //Servicio de login
+ // @authenticate.skip()
   @post('/login', {
     responses: {
       '200': {
